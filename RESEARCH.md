@@ -1,0 +1,5 @@
+# Research
+
+The W3C Candidate Recommendation Snapshot published on 30 May 2024 distinguishes the 180-member grammar ceiling from the conditions for full propagation, 64 members and 8192 bytes. Section 3.3 also allows duplicate keys and requires percent-encoding for disallowed value octets, including the percent sign itself. The audit uses the published snapshot for these rules. [Grammar and limits](https://www.w3.org/TR/2024/CR-baggage-20240530/#header-content)
+
+An OpenTelemetry Erlang issue reports extraction without an explicit size or entry-count cap. The OpenTelemetry Go advisory describes a raw-length check regression in specific releases. These reports show why raw byte count and member count are useful to inspect separately in a saved header. The CLI evaluates neither service behavior nor SDK conformance. [Erlang issue 992](https://github.com/open-telemetry/opentelemetry-erlang/issues/992), [Go advisory](https://github.com/open-telemetry/opentelemetry-go/security/advisories/GHSA-5wrp-cwcj-q835)

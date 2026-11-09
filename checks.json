@@ -1,0 +1,29 @@
+[
+  {
+    "name": "within both budgets with a duplicate",
+    "args": ["baggage_budget_audit.py", "examples/within-budget.raw"],
+    "exit": 0,
+    "report": {"status": "ok", "bytes": 62, "members": 3, "byte_budget_exceeded": false,
+               "member_budget_exceeded": false, "duplicate_member_ordinals": [3]}
+  },
+  {
+    "name": "over the member budget only",
+    "args": ["baggage_budget_audit.py", "examples/member-budget.raw"],
+    "exit": 1,
+    "report": {"status": "over_budget", "bytes": 519, "members": 65, "byte_budget_exceeded": false,
+               "member_budget_exceeded": true, "duplicate_member_ordinals": []}
+  },
+  {
+    "name": "over the byte budget only",
+    "args": ["baggage_budget_audit.py", "examples/byte-budget.raw"],
+    "exit": 1,
+    "report": {"status": "over_budget", "bytes": 8193, "members": 1, "byte_budget_exceeded": true,
+               "member_budget_exceeded": false, "duplicate_member_ordinals": []}
+  },
+  {
+    "name": "trailing newline invalidates the saved value",
+    "args": ["baggage_budget_audit.py", "examples/invalid-newline.raw"],
+    "exit": 2,
+    "report": {"status": "invalid"}
+  }
+]
